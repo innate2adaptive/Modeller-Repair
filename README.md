@@ -6,7 +6,7 @@ Used to repair subset of benchmark TCR and pMHC structures found in [https://git
 
 ## Install Modeller with Conda
 
-* Obtain a Modeller license key, [following Modeller registration instructions](https://salilab.org/modeller/registration.html) 
+* Obtain a Modeller license key by following the [Modeller registration instructions](https://salilab.org/modeller/registration.html).
 
 * If conda is installed, create a new virtual environment (initial install only):
 
