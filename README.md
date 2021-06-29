@@ -35,13 +35,13 @@ The `repair.py` script can be used to repair protein structures with missing res
 
 The structure can be repaired using:
   ```bash
-  python repair_model.py -t template.pdb -a alignment.ali
+  python repair.py -t template.pdb -a alignment.ali
   ```
 where the `-t` argument provides the template structure with missing residues, and the `-a` argument provides the alignment file, containing the desired chain sequence and the names of the template and output pdb files (see section below for an example).
 
 The modelling can be limited to a specific region of the structure by using the `-s` argument:
   ```bash
-  python repair_model.py -t template.pdb -a alignment.ali -s 20 26
+  python repair.py -t template.pdb -a alignment.ali -s 20 26
   ```
 where `20` and `26` can be replaced with the start and end residue number from the template pdb file.
 
@@ -59,7 +59,7 @@ The `example` directory contains the following files:
 
 The structure can be repaired around this region by entering the `example` directory and using the `repair.py` script:
 ```bash
-cd example && python ../repair_model.py -t 2nx5_r_u_processed.pdb -a 2nx5_r_u.ali -s 94 96
+cd example && python ../repair.py -t 2nx5_r_u_processed.pdb -a 2nx5_r_u.ali -s 94 96
 ```
 This will produce 10 models of the repaired chain and then replace the broken chain in the template with the best model (ranked by Modeller DOPE score).
 
