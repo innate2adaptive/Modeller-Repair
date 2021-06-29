@@ -51,13 +51,13 @@ The process of repairing a structure is illustrated using an example provided in
 
 The `example` directory contains the following files:
 
-* `2nx5_r_u.pdb` is pdb file containing data relating to the structure of an unbound T cell receptor protein. This structure is taken from the set of TCR Benchmark structures that can be found in the `raw` directory of the [Expanded Benchmark Repository](https://github.com/innate2adaptive/ExpandedBenchmark). This file is missing the residue `SER.95` and neighbouring atoms in residues `ALA.94` `GLY.96`  in a region of the protein `A` chain that is critical to its function.
+* `2nx5_r_u.pdb` is pdb file containing data relating to the structure of an unbound T cell receptor protein. This structure is taken from the set of TCR Benchmark structures that can be found in the `raw` directory of the [Expanded Benchmark Repository](https://github.com/innate2adaptive/ExpandedBenchmark). This file is missing the residue `SER.95` and neighbouring atoms in residues `ALA.94` and `GLY.96`  in a region of the protein `A` chain that is critical to its function.
 
 * `2nx5_r_u_processed.pdb` is a cleaned version of the `2nx5_r_u.pdb` file described above. The solvent atoms have been removed, as have the incomplete `ALA.94` and `GLY.96` residues.
 
 * `2nx5_r_u.ali` contains the PIR format required by Modeller for homology modelling. The first three lines provide information about the processed template structure and sequence. Gaps are included in the sequence for the residues that need to be repaired. The second three lines provide information about the correct sequence required in the output models. Further details for customising this file can be found in the Modeller documentation about the [Alignment file format](https://salilab.org/modeller/8v2/manual/node176.html).
 
-The structure can be repaired around this region entering the `example` directory and using the `repair.py` script:
+The structure can be repaired around this region by entering the `example` directory and using the `repair.py` script:
 ```bash
 cd example && python ../repair_model.py -t 2nx5_r_u_processed.pdb -a 2nx5_r_u.ali -s 94 96
 ```
